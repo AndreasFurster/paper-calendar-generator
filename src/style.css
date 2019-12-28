@@ -1,0 +1,13 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  -webkit-print-color-adjust: exact;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+}
+
+.h-100 {
+  height: 100vh;
+}
