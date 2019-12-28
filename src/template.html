@@ -5,16 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Calendar</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css" integrity="sha256-D9AvR0EzkNZoWZVSvI3ch+uf/Z5izrIpcbsykVphwPU=" crossorigin="anonymous" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
   <link rel="stylesheet" href="../src/style.css">
 </head>
 <body>
   {{#each dates as |date|}}
-    <div class="page h-100">
-      <h1>{{date.day}}</h1>
-      <h2>{{date.month}}</h2>
+    <div class="page h-screen {{ date.oddOrEven }}">
+      <div>
+        <div class="pt-3 info-left float-left">
+          <span class="text-5xl">{{ date.day }}</span>
+          <span class="text-3xl ml-2 capitalize">{{ date.dayName }}</span>
+          <span class="text-xl ml-4 italic capitalize">{{ date.monthName }}</span>
+        </div>
+
+        <div class="pt-3 info-right float-right">
+          <span class="text-xl ml-4 italic capitalize">{{ date.monthName }}</span>
+          <span class="text-3xl ml-2 capitalize">{{ date.dayName }}</span>
+          <span class="text-5xl">{{ date.day }}</span>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+
+      <div class="flex -mx-1">
+        {{#repeat 2}}
+        <table class="calendar w-1/2 mx-1">
+          <thead>
+            <td class="text-center w-8"><i class="fas fa-car"></i></td>
+            <td class="text-center w-10"><i class="fas fa-clock"></i></td>
+            <td class="text-center"><i class="fas fa-info-circle"></i></td>
+            <td class="text-center w-12"><i class="fas fa-euro-sign"></i></td>
+            <td class="text-center w-10"><i class="fas fa-user"></i></td>
+            <td class="text-center w-4"><i class="fas fa-check"></i></td>
+          </thead>
+          <tbody>
+            {{#repeat 48}}
+              <tr class="h-5">
+                {{#repeat 6}}
+                  <td></td>
+                {{/repeat}}
+              </tr>
+            {{/repeat}}
+          </tbody>
+        </table>
+        {{/repeat}}
+      </div>
     </div>
   {{/each}}
 </body>

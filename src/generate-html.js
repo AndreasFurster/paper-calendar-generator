@@ -1,7 +1,9 @@
 const handlebars = require('handlebars');
 const helpers = require('handlebars-helpers')();
 const fs = require('fs');
+const repeat = require('handlebars-helper-repeat');
 
+handlebars.registerHelper('repeat', repeat);
 handlebars.registerHelper(helpers)
 
 module.exports = function(templateFile) {

@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const readline = require('readline');
 
 const pdfOptions = {
   printBackground: true,
@@ -17,13 +18,13 @@ async function pdfGenerator() {
 
   var requestCounter = 0;
   this._page.on('requestfinished', request => {
-    process.stdout.clearLine();
-    process.stdout.cursorTo(0);
-    process.stdout.write(`Requests finished: ${++requestCounter}`);
+    readline.clearLine(process.stdout, 0);
+    readline.cursorTo(process.stdout, 0, null);
+    process.stdout.write(`Http requests finished: ${++requestCounter}`);
   });
 
   this._page.on('requestfailed', request => {
-    console.log(`Request failed: ${request.url()}`);
+    console.log(`Http request failed: ${request.url()}`);
   });
 
   this.generate = async function(htmlFile, pdfPath) {

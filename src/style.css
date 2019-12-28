@@ -8,6 +8,38 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto Slab', serif;
 }
 
-.h-100 {
-  height: 100vh;
+.page {
+  page-break-after: always;
+}
+
+.page.odd {
+  padding-left: 4rem;
+  padding-right: 1rem;
+}
+
+.page.even {
+  padding-right: 4rem;
+  padding-left: 1rem;
+}
+
+.page.odd .info-left {
+  display: none;
+}
+
+.page.even .info-right {
+  display: none;
+}
+
+table.calendar {
+  height: 100%;
+  border-collapse: collapse;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  border-top: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+table.calendar tr td {
+  border-left: 1px solid rgba(0, 0, 0, 0.8);
+  border-right: 1px solid rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
