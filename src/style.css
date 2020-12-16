@@ -22,12 +22,12 @@ h1, h2, h3, h4, h5, h6 {
   padding-left: 1rem;
 }
 
-.page.odd .info-left {
-  display: none;
+.page.odd .info {
+  align-items: flex-end;
 }
 
-.page.even .info-right {
-  display: none;
+.page.odd .info .info__items {
+  flex-direction: row-reverse;
 }
 
 table.calendar {

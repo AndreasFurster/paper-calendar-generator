@@ -10,7 +10,7 @@ const config = require('./config')()
 const moment = MomentRange.extendMoment(Moment);
 moment.locale('nl')
 
-const year = 2020;
+const year = 2021;
 
 async function generate() {
   let startDate = moment(year, 'YYYY')
