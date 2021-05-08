@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/AndreasFurster/paper-calendar-generator#readme",
   "dependencies": {
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.7",
     "handlebars-helper-repeat": "^2.0.0",
     "handlebars-helpers": "^0.10.0",
     "moment": "^2.29.1",
