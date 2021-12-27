@@ -1,5 +1,3 @@
-const fs = require('fs')
-const path = require('path')
 const generateHtml = require('./generate-html')
 const generatePdf = require('./generate-pdf')
 const Moment = require('moment')
@@ -10,9 +8,7 @@ const config = require('./config')()
 const moment = MomentRange.extendMoment(Moment);
 moment.locale('nl')
 
-const year = 2021;
-
-async function generate() {
+async function generate(year) {
   let startDate = moment(year, 'YYYY')
   let endDate = moment(year + 1, 'YYYY')
 
@@ -37,7 +33,18 @@ async function generate() {
   htmlGenerator.saveResultToFile(config.resultHtmlFile)
 
   const pdfGenerator = await generatePdf();
-  await pdfGenerator.generate(config.resultHtmlFile, config.resultPdfFile)
+  await pdfGenerator.generate(config.resultHtmlFile, config.resultPdfFile.replace('{year}', year))
 }
 
-generate()
+(async() => {
+  await generate(2021)
+  await generate(2022)
+  await generate(2023)
+  await generate(2024)
+  await generate(2025)
+  await generate(2026)
+  await generate(2027)
+  await generate(2028)
+  await generate(2029)
+  await generate(2030)
+})();

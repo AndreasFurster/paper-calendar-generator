@@ -6,6 +6,6 @@ module.exports = function() {
   return {
     templateHtmlFile: path.join(process.cwd(), 'src', 'template.html'),
     resultHtmlFile: path.join(process.cwd(), 'dist', 'result.html'),
-    resultPdfFile: path.join(process.cwd(), 'dist', 'result.pdf'),
+    resultPdfFile: path.join(process.cwd(), 'dist', 'calendar-{year}.pdf'),
   }
 }

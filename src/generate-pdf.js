@@ -4,7 +4,8 @@ const readline = require('readline');
 const pdfOptions = {
   printBackground: true,
   scale: 1,
-  format: 'a4'
+  format: 'a4',
+  timeout: 1000 * 60 * 5, // 5 minutes
 }
 
 module.exports = pdfGenerator;
